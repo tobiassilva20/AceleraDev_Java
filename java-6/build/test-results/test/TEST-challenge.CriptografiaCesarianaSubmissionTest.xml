@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="challenge.CriptografiaCesarianaSubmissionTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2020-06-25T02:06:07" hostname="tobias-Lenovo-ideapad-320-15IKB" time="0.005">
+  <properties/>
+  <testcase name="deveRetornarErroQuandoCriptografaTextoEhNulo" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.001"/>
+  <testcase name="deveConverterCaracteresParaMinusculoNaDescriptografia" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.0"/>
+  <testcase name="deveManterOsNumerosNaCriptografia" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.0"/>
+  <testcase name="deveConverterCaracteresParaMinusculoNaCriptografia" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.0"/>
+  <testcase name="deveManterOsNumerosNaDescriptografia" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.0"/>
+  <testcase name="deveRetornarErroQuandoDesCriptografaTextoEhNulo" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.0"/>
+  <testcase name="deveRetornarErroQuandoODesCriptografaTextoEhVazio" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.0"/>
+  <testcase name="deveCriptografarTexto" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.0"/>
+  <testcase name="deveRetornarErroQuandoOCriptografaTextoEhVazio" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.0"/>
+  <testcase name="deveDescriptografarTexto" classname="challenge.CriptografiaCesarianaSubmissionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
