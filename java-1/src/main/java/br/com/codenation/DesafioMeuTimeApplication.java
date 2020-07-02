@@ -6,6 +6,7 @@ import br.com.codenation.exceptions.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -42,26 +43,30 @@ public class DesafioMeuTimeApplication implements MeuTimeInterface {
 	}
 
 	public void definirCapitao(Long idJogador) {
-		Time time = buscarTime(buscarJogador(idJogador));
+		Jogador jogador = buscarJogador(idJogador);
+		Time time = buscarTime(jogador.idTime);
 		time.capitao = idJogador;
+		//System.out.println(time.capitao);
 	}
 
 	public Long buscarCapitaoDoTime(Long idTime) {
 		Time time = buscarTime(idTime);
 		for (Jogador jogador: time.jogadores) {
 			if(time.capitao != null){
-				return jogador.id;
+				return time.capitao;
 			}
 		}
 		return null;
 	}
 
 	public String buscarNomeJogador(Long idJogador) {
-		throw new UnsupportedOperationException();
+		Jogador jogador = buscarJogador(idJogador);
+		return jogador.nome;
 	}
 
 	public String buscarNomeTime(Long idTime) {
-		throw new UnsupportedOperationException();
+		Time time = buscarTime(idTime);
+		return time.nome;
 	}
 
 	public List<Long> buscarJogadoresDoTime(Long idTime) {
@@ -77,11 +82,22 @@ public class DesafioMeuTimeApplication implements MeuTimeInterface {
 	}
 
 	public Long buscarMelhorJogadorDoTime(Long idTime) {
-		throw new UnsupportedOperationException();
+		Time time = buscarTime(idTime);
+		Jogador melhorJogador = null;
+		int aux = 0;
+		for (Jogador jogador: time.jogadores) {
+			if(jogador.nivelHabilidade > aux){
+				 aux = jogador.nivelHabilidade;
+				 melhorJogador = jogador;
+				
+			}
+		}
+		return melhorJogador.id;
 	}
 
 	public Long buscarJogadorMaisVelho(Long idTime) {
-		throw new UnsupportedOperationException();
+
+		return idTime;
 	}
 
 	public List<Long> buscarTimes() {
@@ -93,15 +109,33 @@ public class DesafioMeuTimeApplication implements MeuTimeInterface {
 	}
 
 	public Long buscarJogadorMaiorSalario(Long idTime) {
-		throw new UnsupportedOperationException();
+		Time time = buscarTime(idTime);
+		Jogador melhorJogador = null;
+		BigDecimal aux = new BigDecimal(0);
+		for (Jogador jogador: time.jogadores) {
+			if(jogador.salario.compareTo(aux) > 0){
+				aux = jogador.salario;
+				melhorJogador = jogador;
+
+			}
+		}
+		return melhorJogador.id;
 	}
 
 	public BigDecimal buscarSalarioDoJogador(Long idJogador) {
-		throw new UnsupportedOperationException();
+		Jogador jogador = buscarJogador(idJogador);
+		return jogador.salario;
 	}
 
 	public List<Long> buscarTopJogadores(Integer top) {
-		throw new UnsupportedOperationException();
+		List<Long> melhores = new ArrayList<>(top);
+		for (Time time: times) {
+			for (Jogador jogador: time.jogadores) {
+				
+			}
+		}
+		return null;
+
 	}
 
 	public Time buscarTime(Long id){
@@ -109,16 +143,16 @@ public class DesafioMeuTimeApplication implements MeuTimeInterface {
 			if(time.id == id)
 				return time;
 		}
-		return null;
+		throw new TimeNaoEncontradoException();
 	}
-	public Long buscarJogador(Long idJogador){
+	public Jogador buscarJogador(Long idJogador){
 		for (Time time: times) {
 			for (Jogador jogador: time.jogadores) {
 				if(jogador.id == idJogador){
-					return jogador.idTime;
+					return jogador;
 				}
 			}
 		}
-		return null;
+		throw new JogadorNaoEncontradoException();
 	}
 }

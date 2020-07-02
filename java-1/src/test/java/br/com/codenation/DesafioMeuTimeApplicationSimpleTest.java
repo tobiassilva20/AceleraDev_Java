@@ -58,8 +58,10 @@ public class DesafioMeuTimeApplicationSimpleTest {
         desafioMeuTimeApplication.incluirJogador(2l, 1l, "Jogador", LocalDate.now(), 1, BigDecimal.TEN);
         desafioMeuTimeApplication.incluirJogador(3l, 1l, "Jogador", LocalDate.now(), 1, BigDecimal.TEN);
         List<Long> jogadoresTime = desafioMeuTimeApplication.buscarJogadoresDoTime(1L);
+        assertEquals(2 , jogadoresTime.size());
         assertTrue(jogadoresTime.contains(2L));
         assertTrue(jogadoresTime.contains(3L));
+
     }
 
     @Test
