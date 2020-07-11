@@ -13,11 +13,11 @@ public class Main {
         d.incluirJogador(3L, 1L, "Tobias3", LocalDate.parse("1984-11-02"), 10, BigDecimal.valueOf(8000));
         d.definirCapitao(1L);
         d.buscarJogadorMaisVelho(1L);
-        //System.out.println(d.buscarCapitaoDoTime(1L));
-        //System.out.println(d.buscarNomeJogador(2L));
-        //System.out.println(d.buscarNomeTime(1L));
-        //System.out.println(d.buscarMelhorJogadorDoTime(1L));
-        //System.out.println(d.buscarJogadorMaiorSalario(1l));
+        System.out.println(d.buscarCapitaoDoTime(1L));
+        System.out.println(d.buscarNomeJogador(2L));
+        System.out.println(d.buscarNomeTime(1L));
+        System.out.println(d.buscarMelhorJogadorDoTime(1L));
+        System.out.println(d.buscarJogadorMaiorSalario(1l));
         d.incluirJogador(5L, 1L, "Tobias2", LocalDate.parse("1985-11-02"), 2, BigDecimal.valueOf(9000));
         d.buscarJogador(5L);
 
